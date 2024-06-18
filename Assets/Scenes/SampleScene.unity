@@ -698,7 +698,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.8301887, g: 0.507834, b: 0.25845498, a: 1}
   m_FlipX: 0
@@ -1702,7 +1702,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9339623, g: 0.61088353, b: 0.36565503, a: 1}
   m_FlipX: 0
@@ -2513,6 +2513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145294482}
   - component: {fileID: 1145294483}
+  - component: {fileID: 1145294484}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -2572,6 +2573,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1145294484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145294481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702ff6072a64e5c4496ae54837999623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1146233927
 GameObject:
   m_ObjectHideFlags: 0
