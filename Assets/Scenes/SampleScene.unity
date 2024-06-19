@@ -2514,9 +2514,10 @@ GameObject:
   - component: {fileID: 1145294482}
   - component: {fileID: 1145294483}
   - component: {fileID: 1145294484}
+  - component: {fileID: 1145294485}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2530,7 +2531,7 @@ Transform:
   m_GameObject: {fileID: 1145294481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.68, y: -2.45, z: 0}
+  m_LocalPosition: {x: -8.82, y: -2.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2570,9 +2571,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0031865835, y: 0.055298567}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.9040123
 --- !u!114 &1145294484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2588,6 +2589,18 @@ MonoBehaviour:
   speed: 3
   frequency: 4
   amplitude: 0.3
+--- !u!114 &1145294485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145294481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0c598958bd22f49a3b4e9e61ec2096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1146233927
 GameObject:
   m_ObjectHideFlags: 0
