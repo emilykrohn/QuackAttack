@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ShootDuck : MonoBehaviour
 {
+    Score score;
+
+    void Start()
+    {
+        score = FindObjectOfType<Score>();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,6 +24,7 @@ public class ShootDuck : MonoBehaviour
             {
                 if (rayHit.collider.tag == "Duck")
                 {
+                    score.incrementScore();
                     Destroy(gameObject);
                 }
             }
