@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ShootDuck : MonoBehaviour
 {
+    [SerializeField] int rotationAmount;
+    [SerializeField] float rotationDuration = 1.0f;
     Score score;
+    DuckMovement movement;
 
     void Start()
     {
         score = FindObjectOfType<Score>();
+        movement = FindObjectOfType<DuckMovement>();
     }
 
     void Update()
@@ -25,9 +29,24 @@ public class ShootDuck : MonoBehaviour
                 if (rayHit.collider.tag == "Duck")
                 {
                     score.incrementScore();
-                    Destroy(gameObject);
+                    movement.StopMovement();
+                    StartCoroutine(Spin());
                 }
             }
         }
+    }
+
+    IEnumerator Spin()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < rotationDuration)
+        {
+            float angle = rotationAmount * (elapsedTime / rotationDuration);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = Quaternion.Euler(0, 0, rotationAmount);
+        Destroy(gameObject);
     }
 }
