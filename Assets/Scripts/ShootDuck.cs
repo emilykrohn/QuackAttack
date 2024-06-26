@@ -12,7 +12,7 @@ public class ShootDuck : MonoBehaviour
     void Start()
     {
         score = FindObjectOfType<Score>();
-        movement = FindObjectOfType<DuckMovement>();
+        movement = GetComponent<DuckMovement>();
     }
 
     void Update()
@@ -24,16 +24,22 @@ public class ShootDuck : MonoBehaviour
             // Raycast from where the mousePosition is to check what the mouse is ontop of
             RaycastHit2D rayHit = Physics2D.Raycast(mousePosition, Vector2.zero);
             // If the raycast hit something, then check if it hit the game object with the Duck tag
-            if (rayHit.collider != null)
+            if (rayHit.collider != null && rayHit.collider.CompareTag("Duck"))
             {
-                if (rayHit.collider.tag == "Duck")
+                ShootDuck clickedDuck = rayHit.collider.GetComponent<ShootDuck>();
+                if (clickedDuck != null)
                 {
-                    score.incrementScore();
-                    movement.StopMovement();
-                    StartCoroutine(Spin());
+                    clickedDuck.HandleClick();
                 }
             }
         }
+    }
+
+    void HandleClick()
+    {
+        score.incrementScore();
+        movement.StopMovement();
+        StartCoroutine(Spin());
     }
 
     IEnumerator Spin()
