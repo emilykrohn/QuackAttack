@@ -48,11 +48,11 @@ public class ShootDuck : MonoBehaviour
         while (elapsedTime < rotationDuration)
         {
             float angle = rotationAmount * (elapsedTime / rotationDuration);
-            transform.rotation = Quaternion.Euler(0, angle, 0);
+            gameObject.transform.rotation = Quaternion.Euler(0, angle, 0);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        transform.rotation = Quaternion.Euler(0, 0, rotationAmount);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, rotationAmount);
         Destroy(gameObject);
     }
 }
